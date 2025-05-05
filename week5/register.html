@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register Page</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: sans-serif;
+        }
+        table tr td{
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        fieldset{
+            width: 500px;
+            text-align: center;
+            margin: auto;
+        }
+        h1{
+            font-size: 20px;
+            font-family: 'Times new Roman',Times,serif;
+        }
+    </style>
+    <div id="header">
+        <h1>register</h1>
+    </div>
+</head>
+
+<body>
+    <center>
+        <form name="frm" method="post" action="/login" onsubmit="return validate()">
+            <fieldset align="center">
+                <table align="center">
+
+                    <tr>
+                        <td>FirstName:</td>
+                        <td><input type="text" name="fname" value="" size="50" required/></td>
+                    </tr>
+
+                    <tr>
+                        <td>LastName:</td>
+                        <td><input type="text" name="lname" value="" size="50 required"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone No:</td>
+                        <td><input type="text" name="phone" value="" size="50 required"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="mail" name="mailid" value="" size="50 required"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>Gender</td>
+                        <td>Male:<input type="radio" name="gender" value="male"></td>
+                        <td>Female:<input type="radio" name="gender" value="female"></td>
+                    </tr>
+
+                    <tr>
+                        <td> DOB: </td>
+                        <td><input type="date" name="dob" size="50 required"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="pwd" value="" size="50 required"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>Age:</td>
+                        <td><input type="text" name="age" value="" size="50 required"/></td>
+                    </tr>
+
+                </table>
+                <input type="submit" value="submit" name="'submit"/>
+            </fieldset>
+        </form>
+    </center>
+</body>
+
+<script>
+    function validate(){
+        var fn=frm.fname.value;
+        localStorage.setItem('firstname',fn)
+        for(x in fn){
+            ch=fn.charCodeAt(x);
+        if(ch<65 || ch>90 && ch<97 || ch>122){
+            alert("invalid firstname")
+            return false;
+        }
+
+
+        }
+        var ln=frm.lname.value;
+        localStorage.setItem('lastname',ln)
+        for(y in ln){
+            ch=ln.charCodeAt(y);
+            if(ch<65 || ch>90 && ch<97 || ch>122){
+                alert("invalid lastname ")
+                return false;
+            }
+        }
+        var phn=frm.phone.value;
+        localStorage.setItem('phone',phn)
+        var lenp=phn.length;
+        if(lenp!==10){
+            alert("Phone no should exactly 10 digits")
+            return false;
+
+        }
+        var pwd1=frm.pwd.value;
+        localStorage.setItem("password",pwd1)
+        var pwd1=pwd1.length;
+        if(pwd1%2===1){
+            alert("Password should contain even number of characters")
+            return false;
+        }
+        var reg=/^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9,-]+\.[a-zA-Z]{2,}$/;
+        var mail=frm.mailid.value;
+        localStorage.setItem('email',mail)
+        if(reg.test(mail)){
+            alert("registration successful");
+
+        }
+        else{
+            alert("invalid email");
+            return false;
+
+        }
+        return true;
+    }
+</script>
+
+<div id="footer">Copyright@CMRIT_2025</div>
+</html>
