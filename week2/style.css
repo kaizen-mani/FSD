@@ -1,0 +1,50 @@
+.navbar-brand img {
+    width: 110px;
+}
+.nav-link {
+    color: #c200ff;
+    font-weight: 600;
+    margin-left: 30px;
+}
+.wrapper {
+    margin: 50px auto;
+    border-radius: 10px;
+    padding-top: 40px;
+    box-shadow: 0 0 40px 2px rgba(37, 73, 214, 0.18);
+    max-width: 900px; /* 👈 ADDED: limits how wide the section is */
+}
+.Feature-box h1 {
+    margin-top: 15%;
+    font-size: 2rem; /* 👈 CHANGED: smaller font size */
+    color: #c200ff;
+}
+.Feature-box p {
+    margin: 30px auto;
+    font-size: 1rem; /* 👈 CHANGED: smaller paragraph text */
+    color: #555;
+}
+.Feature-box a {
+    text-decoration: none;
+    background: #a669ce;
+    border-radius: 20px;
+    margin-left: 30px;
+    border: none; /* 👈 CHANGED: removed large border */
+    padding: 10px 20px;
+    color: #fff;
+    display: inline-block;
+}
+.btn-one:hover {
+    color: #fff;
+    background: #8e4bb0;
+}
+.btn-two {
+    background: none;
+    border: 2px solid #a669ce;
+    color: #a669ce;
+    padding: 10px 20px;
+}
+.feature-img {
+    width: 100%;
+    max-width: 100%; /* 👈 ADDED: ensure image scales properly */
+    padding: 30px;
+}
